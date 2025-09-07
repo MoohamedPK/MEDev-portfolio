@@ -50,26 +50,21 @@ export const aboutMe = [
 
 export const ProjectsData = [
   {
-    "title": "Food Delivery App",
-    "link": "https://food-delivery-web-frontend-99lm.onrender.com/",
-    "overview": "A modern, responsive food delivery web application with customer-facing features and an admin panel for restaurant management.",
+    "title": "Freelance Boost AI - AI Learning Companion Platform",
+    "overview": "A modern web application that enables users to learn through AI-powered voice conversations. Users can browse AI companions across different subjects, engage in real-time voice sessions, track progress, and bookmark favorite learning experiences.",
     "features": [
-      "User authentication & authorization with JWT",
-      "Dynamic food menu with search & filtering",
-      "Shopping cart with persistent state",
-      "Order management and order tracking",
-      "Admin panel for restaurant staff",
-      "Responsive, mobile-first UI",
-      "Real-time cart updates & order notifications"
+      "AI companion library with search and filtering",
+      "Voice-enabled learning sessions with real-time conversation",
+      "Progress tracking and session history",
+      "User authentication and personalized profiles",
+      "Custom companion creation"
     ],
-    "techStack": {
-      "frontend": ["React 18", "Redux Toolkit + Persist", "React Router DOM", "Tailwind CSS", "Vite", "Lucide React", "React Hook Form"],
-      "backend": ["Node.js", "Express.js", "MongoDB Atlas", "Mongoose", "JWT", "Bcrypt", "Multer", "Stripe"],
-      "devTools": ["ESLint", "Nodemon", "Git"]
-    },
-    "image": "/media/Projects/Screenshot 2025-09-04 205856.png",
-    "color": "#0f172a"
+    "link": "https://learningagent.vercel.app/",
+    "github": "https://github.com/MoohamedPK/your-store",
+    "image": "/media/Projects/Screenshot 2025-09-07 193201.png",
+    "color": "#EEEFE0"
   },
+  
   {
     "title": "Awwward Landing Page",
     "link": "https://awwward-landing-page.vercel.app/",
@@ -83,8 +78,9 @@ export const ProjectsData = [
     "techStack": {
       "frontend": ["React", "Vite", "Tailwind CSS", "GSAP"]
     },
+    "github": "https://github.com/MoohamedPK/awwward-landing-page-",
     "image": "/media/Projects/Screenshot 2025-09-04 210017.png",
-    "color": "#3e1e1e"
+    "color": "#A7C1A8"
   },
   {
     "title": "ShopHub E-commerce",
@@ -108,7 +104,30 @@ export const ProjectsData = [
       "validation": ["Zod"],
       "testing": ["Cypress"]
     },
-    "image": "/media/Projects/Screenshot 2025-09-04 210044.png",
-    "color": "#113827"
+    "github":"https://github.com/MoohamedPK/your-store",
+    "image": "/media/Projects/shophub-laptop.png",
+    "color": "#D1D8BE"
+  },
+  {
+    "title": "Food Delivery App",
+    "link": "https://food-delivery-web-frontend-99lm.onrender.com/",
+    "overview": "A modern, responsive food delivery web application with customer-facing features and an admin panel for restaurant management.",
+    "features": [
+      "User authentication & authorization with JWT",
+      "Dynamic food menu with search & filtering",
+      "Shopping cart with persistent state",
+      "Order management and order tracking",
+      "Admin panel for restaurant staff",
+      "Responsive, mobile-first UI",
+      "Real-time cart updates & order notifications"
+    ],
+    "techStack": {
+      "frontend": ["React 18", "Redux Toolkit + Persist", "React Router DOM", "Tailwind CSS", "Vite", "Lucide React", "React Hook Form"],
+      "backend": ["Node.js", "Express.js", "MongoDB Atlas", "Mongoose", "JWT", "Bcrypt", "Multer", "Stripe"],
+      "devTools": ["ESLint", "Nodemon", "Git"]
+    },
+    "github": "https://github.com/MoohamedPK/AI-SaaS-App",
+    "image": "/media/Projects/Screenshot 2025-09-04 205856.png",
+    "color": "#B0DB9C"
   }
 ]

@@ -110,9 +110,9 @@ gsap.registerPlugin(SplitText, ScrollTrigger)
         }, [])
 
     return (
-        <section id="about" ref={aboutContainerRef} className=" h-[110dvh] bg-black text-text font-nevanta-Medium italic">
-            <div className="text-container text-center text-[2em] overflow-hidden">
-                <h1 className="title-text m-0 leading-8 pt-7">
+        <section id="about" ref={aboutContainerRef} className=" h-[120dvh] mb-[10dvh] bg-black text-text font-nevanta-Medium italic">
+            <div className="text-container text-center text-[2em] overflow-hidden pt-[10dvh]">
+                <h1 className="title-text leading-8">
                     Discover More About Me!
                 </h1>
             </div>
@@ -145,8 +145,6 @@ gsap.registerPlugin(SplitText, ScrollTrigger)
                     </div>
                 )}
             </div>
-
-
         </section>
     )
     }

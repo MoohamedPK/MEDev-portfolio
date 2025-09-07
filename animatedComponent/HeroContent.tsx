@@ -49,13 +49,12 @@ const HeroContent = () => {
 
         }, containerRef) 
 
-
     }, [])
 
-  return (
+    return (
 
-    <section className="h-screen">
-        <div className="black-layer size-full bg-black text-text centerlized-items relative">
+    <section className="h-[110dvh] mb-[10dvh]">
+        <div className="black-layer size-full bg-sand text-black centerlized-items relative">
             <div ref={containerRef} className="container flex justify-around items-center">
 
                 <div className="hero-text font-nevanta-Medium uppercase text-[4em] italic">
@@ -65,7 +64,7 @@ const HeroContent = () => {
                         expert
                     </div>
 
-                    <p ref={taglineTextRef} className='font-nevanta-Light capitalize text-[18px] pt-5'>From concept to code — bringing visions to life.</p>
+                    <p ref={taglineTextRef} className='font-nevanta-Medium capitalize text-[18px] pt-5'>From concept to code — bringing visions to life.</p>
                 </div>
 
                 <div className="hero-img -translate-x-[55em] relative">

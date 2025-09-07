@@ -5,11 +5,12 @@ import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
-    <main className="space-y-10 bg-black">
+    <main className=" bg-sand">
       <Navbar/>
       <Hero/>
       <About/>
       <Projects/>
+      <div className="h-screen bg-white"></div>
     </main>
   );
 }
