@@ -53,7 +53,7 @@ const HeroContent = () => {
 
     return (
 
-    <section className="h-[110dvh] mb-[10dvh]">
+    <section className="h-screen">
         <div className="black-layer size-full bg-sand text-black centerlized-items relative">
             <div ref={containerRef} className="container flex justify-around items-center">
 

@@ -110,7 +110,7 @@ gsap.registerPlugin(SplitText, ScrollTrigger)
         }, [])
 
     return (
-        <section id="about" ref={aboutContainerRef} className=" h-[120dvh] mb-[10dvh] bg-black text-text font-nevanta-Medium italic">
+        <section ref={aboutContainerRef} className="min-h-[120dvh] bg-black text-text font-nevanta-Medium italic">
             <div className="text-container text-center text-[2em] overflow-hidden pt-[10dvh]">
                 <h1 className="title-text leading-8">
                     Discover More About Me!

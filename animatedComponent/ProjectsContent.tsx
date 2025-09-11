@@ -52,10 +52,11 @@ const ProjectsContent = () => {
                 })
 
                 // section scale animation 
-                 gsap.set(projectsContainerRef.current, { perspective: 1500 }); // set perspective on parent
+                 gsap.set(projectsContainerRef.current, { perspective: 1000 }); // set perspective on parent
 
                 gsap.to(section, {
-                    z: -500,              // push backward in 3D space
+                    z: -200,              // push backward in 3D space
+                    scale: 0.6,
                     transformOrigin: "center top",
                     scrollTrigger: {
                     trigger: section,
@@ -103,7 +104,7 @@ const ProjectsContent = () => {
     }, [])
 
     return (
-        <main id="projects" ref={projectsContainerRef} className="grid justify-center items-center bg-sand" style={{ height: `${ProjectsData.length * 130}vh` }}>
+        <main ref={projectsContainerRef} className="grid justify-center items-center" style={{ height: `${ProjectsData.length * 110}vh` }}>
 
             <div className="text-center text-[2em] overflow-hidden text-black italic font-nevanta-Medium">
                 <h1 className="section-title m-0 leading-8">
@@ -112,7 +113,7 @@ const ProjectsContent = () => {
             </div>
 
                 {ProjectsData.map((project, i) => (
-                <section key={i} style={{ top: `calc(10% + ${i * 60}px)`, backgroundColor: project.color }} className="h-[90dvh] w-[90dvw] sticky flex justify-center items-center rounded-[100px] text-black bg-white inset-shadow-sm inset-shadow-gray-400/60">
+                <section key={i} style={{ top: `calc(10% + ${i * 60}px)`, backgroundColor: project.color }} className="min-h-[100dvh] w-[90dvw] sticky flex justify-center items-center rounded-[100px] text-black bg-white inset-shadow-sm inset-shadow-gray-400/60">
                     
                     <div className="contentContainer size-full flex justify-between items-center px-5">
 

@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+@import "tw-animate-css";
+/*  ---break---  */
+@custom-variant dark (&:is(.dark *));
 
 /*  FONTS  */
 @font-face {
@@ -66,7 +68,7 @@
 
 /* REUSABLE CLASSES */
 @layer utilities {
-    
+
     .container {
         @apply px-16 py-6
     }
