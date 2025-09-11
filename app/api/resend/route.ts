@@ -9,8 +9,8 @@ export async function POST(req: Request) {
     const {data, error} = await resend.emails.send({
         from: "onboarding@resend.dev", // this is the domain 
         to: "mohamedhassani123456@gmail.com", // the receiver
-        subject: "portfolio buisiness", 
-        text: "This is the body of the email.",
+        subject: body.subject, 
+        text: body.message,
         replyTo: body.email // the user that we will reply to 
     });
 

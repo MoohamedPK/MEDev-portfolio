@@ -46,7 +46,7 @@ const NavContent = () => {
   }, [])
 
   return (
-    <nav ref={navRef} className="m-3 p-3 rounded-lg bg-black text-white flex justify-between items-center">
+    <nav ref={navRef} className="m-3 py-3 px-6 rounded-lg bg-black text-white flex justify-between items-center">
         <div className="logo font-nevanta-ExtraBold tracking-wider text-[1em] size-[4em] z-30 bg-white mix-blend-difference centerlized-items">
             <h1 className="text-black italic">MEDev</h1>
         </div>
