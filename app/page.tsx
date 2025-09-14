@@ -7,22 +7,22 @@ import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
-    <main className=" bg-black">
+    <main className="bg-text min-h-screen">
       <Navbar />
 
-      <section id="hero" className="py-32">
+      <section id="hero" className="relative">
         <Hero />
       </section>
 
-      <section id="about" className="py-24">
+      <section id="about" className="py-12 sm:py-16 md:py-20 lg:py-24">
         <About />
       </section>
 
-      <section id="projects">
+      <section id="projects" className="relative">
         <Projects />
       </section>
 
-      <section id="contact" className="py-24">
+      <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24">
         <Contact />
       </section>
 

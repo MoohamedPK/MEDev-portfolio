@@ -6,6 +6,7 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/all"
 import { useGSAP } from "@gsap/react"
 import { useRef } from "react"
+import Image from "next/image"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,49 +16,56 @@ const NavContent = () => {
   const liRefs = useRef<(HTMLElement | null)[]>([]);
 
   useGSAP(() => {
-    
     const ctx = gsap.context(() => {
-
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: navRef.current,
           start: "top+=200",
           toggleActions: "play none none reverse",
         }
-      })
+      });
 
       tl.to(navRef.current, {
-        backgroundColor: "#fff", // semi-transparent
+        backgroundColor: "#BFBFBF",
         border: "1px solid black",
+        margin: "8px",
+        borderRadius: "8px",
         color: "#000000",
         position: "sticky",
         top: "10px",
         zIndex: 30,
-        duration: 0.9,
+        duration: 0.4,
         ease: "power3.inOut",
-      })
+      });
+    });
 
-
-      return () => {
-        ctx.revert();
-      }
-    }, )
-
-  }, [])
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <nav ref={navRef} className="m-3 py-3 px-6 rounded-lg bg-black text-white flex justify-between items-center">
-        <div className="logo font-nevanta-ExtraBold tracking-wider text-[1em] size-[4em] z-30 bg-white mix-blend-difference centerlized-items">
-            <h1 className="text-black italic">MEDev</h1>
-        </div>
+    <nav
+      ref={navRef}
+      className="py-3 sm:py-4 px-4 sm:px-5 md:px-6 text-text bg-background flex justify-between items-center"
+    >
+      {/* Logo */}
+      <div className="logo ">
+        <Image src={"/media/my-logo-2.svg"} alt="logo" width={0} height={0} className="size-[3rem] md:size-[5rem]"/>
+      </div>
 
-        <ul className="flex items-center space-x-8 font-nevanta-Medium italic">
-          {Links.map((link, index) => (
-            <Link href={link.href} key={link.name}>
-              <li ref={(el) => { liRefs.current[index] = el }}  className="cursor-pointer" id={link.href} >{link.name}</li>
-            </Link>
-          ))}
-        </ul>
+      {/* Navigation Links - Always visible */}
+      <ul className="flex items-center space-x-4 sm:space-x-4 md:space-x-5 lg:space-x-6 xl:space-x-8 font-nevanta-Medium italic text-xs sm:text-sm md:text-base">
+        {Links.map((link, index) => (
+          <Link href={link.href} key={link.name}>
+            <li
+              ref={(el) => { liRefs.current[index] = el }}
+              className="cursor-pointer hover:opacity-70 transition-opacity whitespace-nowrap"
+              id={link.href}
+            >
+              {link.name}
+            </li>
+          </Link>
+        ))}
+      </ul>
     </nav>
   )
 }

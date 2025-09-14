@@ -110,35 +110,35 @@ gsap.registerPlugin(SplitText, ScrollTrigger)
         }, [])
 
     return (
-        <section ref={aboutContainerRef} className="min-h-[120dvh] bg-black text-text font-nevanta-Medium italic">
-            <div className="text-container text-center text-[2em] overflow-hidden pt-[10dvh]">
-                <h1 className="title-text leading-8">
+        <section ref={aboutContainerRef} className="min-h-[120dvh] bg-text text-background font-nevanta-Medium italic">
+            <div className="text-container text-center text-[1.2em] sm:text-[1.5em] md:text-[1.8em] lg:text-[2em] overflow-hidden pt-[8dvh] sm:pt-[10dvh]">
+                <h1 className="title-text leading-6 sm:leading-7 md:leading-8">
                     Discover More About Me!
                 </h1>
             </div>
 
-            <div className="flex mt-18 justify-center">
-                <div className="btn-container flex space-x-5 border border-text w-fit px-12 py-4 rounded-full">
+            <div className="flex mt-8 sm:mt-12 md:mt-16 lg:mt-18 justify-center px-4">
+                <div className="btn-container flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 border border-background w-fit px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 rounded-full">
                     {aboutMe.map((q, i) => (
                         <div key={i} className="">
-                            <button onClick={() => setSelectedQuestion(i)} className="my-btn bg-text text-black p-2 rounded-full cursor-pointer btn-hover">{q.button}</button>
+                            <button onClick={() => setSelectedQuestion(i)} className="my-btn bg-background text-text p-1.5 sm:p-2 rounded-full cursor-pointer btn-hover text-xs sm:text-sm md:text-base">{q.button}</button>
                         </div>
                     ))}
                 </div>
             </div>
 
-            <div className="answer flex justify-center items-center mt-32">
+            <div className="answer flex justify-center items-center mt-16 sm:mt-20 md:mt-24 lg:mt-32 px-4">
                 {selectedQuestion === null ? (
-                    <div className="font-nevanta-Light">What Do You Want To Know About Me? 😶‍🌫️</div>
+                    <div className="font-nevanta-Light text-sm sm:text-base md:text-lg lg:text-xl text-center">What Do You Want To Know About Me? 😶‍🌫️</div>
                 ) : (
-                    <div className="flex justify-around items-center space-x-8">
+                    <div className="flex flex-col lg:flex-row justify-center items-center space-y-6 lg:space-y-0 lg:space-x-8 w-full max-w-7xl">
 
-                        <div className="w-1/2 relative ">
-                            <Image ref={answerImgRef} className="about-img size-100 object-cover sepia-50" width={200} height={200} src={aboutMe[selectedQuestion].img ?? ""} alt="about picture"/>
+                        <div className="w-full sm:w-3/4 md:w-1/2 lg:w-1/2 relative flex justify-center">
+                            <Image ref={answerImgRef} className="about-img w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 object-cover sepia-50 rounded-lg" width={320} height={320} src={aboutMe[selectedQuestion].img ?? ""} alt="about picture"/>
                         </div>
 
-                        <div  className="w-[60rem] text-[2.5em] flex justify-center overflow-hidden uppercase ">
-                            <p ref={answerRef} className="w-[80rem] text-center">
+                        <div className="w-full lg:w-1/2 text-[1em] sm:text-[1.2em] md:text-[1.5em] lg:text-[1.8em] xl:text-[2.5em] flex justify-center overflow-hidden uppercase">
+                            <p ref={answerRef} className="w-full text-center leading-relaxed">
                                 {aboutMe[selectedQuestion].answer}
                             </p>
                         </div>

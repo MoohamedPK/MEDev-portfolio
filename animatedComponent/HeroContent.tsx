@@ -1,5 +1,4 @@
 "use client"
-import Image from 'next/image'
 import React, { useRef } from 'react'
 
 //GSAP
@@ -21,13 +20,19 @@ const HeroContent = () => {
 
             const mainTextSplit = SplitText.create(mainTextRef.current, {type: "lines"});
             const taglineSplit = SplitText.create(taglineTextRef.current, {type: "lines"});
+
+            const bars = gsap.utils.toArray(".bar");
     
             const tl = gsap.timeline()
-    
-                tl.to(".hero-img", {
-                    xPercent: 170,
-                    duration: 1.5,
-                    ease: "power3.inOut"
+
+                tl.fromTo(bars,{
+                    height: "100vh",
+                },{
+                    height: "0px",
+                    duration: 1,
+                    ease: "power3.inOut",
+                    stagger: 0.05,
+                    onComplete: () => { gsap.set(".overlay", { display: "none" }); }
                 })
     
                 .fromTo([mainTextSplit.lines, taglineSplit.lines],{
@@ -40,7 +45,7 @@ const HeroContent = () => {
                     duration: 0.9,
                     stagger: 0.1,
                     ease: "power3.inOut"
-                }, "-=0.03");
+                }, "<0.8");
 
                 return () => {
                     mainTextSplit.revert()
@@ -53,26 +58,34 @@ const HeroContent = () => {
 
     return (
 
-    <section className="h-screen">
-        <div className="black-layer size-full bg-sand text-black centerlized-items relative">
-            <div ref={containerRef} className="container flex justify-around items-center">
+    <section ref={containerRef} className="h-screen relative">
 
-                <div className="hero-text font-nevanta-Medium uppercase text-[4em] italic">
-                    <div ref={mainTextRef}>
+        <div className="overlay h-screen z-90 flex w-screen fixed top-0">
+            {Array.from({ length: 10 }).map((_, index) => (
+                <div
+                key={index}
+                className="bar w-[10vw] h-[100dvh] bg-black"
+                ></div>
+            ))}
+        </div>
+
+        <div className="black-layer size-full bg-background text-black centerlized-items relative">
+            <div className="container flex flex-col lg:flex-row justify-center lg:justify-around items-center px-4 sm:px-6 lg:px-8">
+
+                <div className="hero-text font-nevanta-bold uppercase text-[1.2em] sm:text-[1.8em] md:text-[2.5em] lg:text-[3.5em] xl:text-[4.5em] italic text-center lg:text-left order-2 lg:order-1">
+                    <div ref={mainTextRef} className='text-text leading-tight'>
                         mohamed hassani<br/>
                         website developer<br/>
                         expert
                     </div>
 
-                    <p ref={taglineTextRef} className='font-nevanta-Medium capitalize text-[18px] pt-5'>From concept to code — bringing visions to life.</p>
+                    <p ref={taglineTextRef} className='font-nevanta-Medium capitalize text-text text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] pt-3 sm:pt-4 lg:pt-5 leading-relaxed'>From concept to code — bringing visions to life.</p>
                 </div>
 
-                <div className="hero-img -translate-x-[55em] relative">
-                    <div className="neon-bg bg-white size-[20em] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[190px]"></div>
-                    <Image src={"/imgs/portfolio-img.png"} alt="profile img" width={500} height={500} className="hero-image"/>
-                </div>
+                
             </div>
         </div>
+
 
     </section>
   )

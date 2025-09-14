@@ -22,25 +22,31 @@ export const aboutMe = [
   {
     "id": "who-am-i",
     "button": "Who am I?",
-    "answer": "I’m Mohamed Hassani, a web developer passionate about building modern, interactive websites.",
+    "answer": "I'm Mohamed Hassani, a web developer who builds modern, interactive websites that make a lasting impression.",
     "img": "/media/aboutImgs/WhatsApp Image 2025-09-02 at 13.38.10_2a3ad396.jpg"
   },
   {
-    "id": "what-i-do",
-    "button": "What do I do?",
-    "answer": "I create responsive, performant, and user-friendly websites using modern web technologies like React, Next.js, and Tailwind CSS.",
+    "id": "Why do I build websites?",
+    "button": "Why do I build websites?",
+    "answer": "I build websites because I love seeing ideas come to life. There's nothing more rewarding than taking a concept and transforming it into a tangible, interactive digital product that people can use and enjoy.",
     "img": "/media/aboutImgs/creative.jpg"
   },
+  // {
+  //   "id": "what-i-love",
+  //   "button": "What do I love?",
+  //   "answer": "I love turning ideas into digital experiences, experimenting with new web technologies, and solving complex problems through code.",
+  //   "img" : "/media/aboutImgs/WhatsApp Image 2025-09-02 at 13.38.10_c79838dd.jpg"
+  // },
   {
-    "id": "what-i-love",
-    "button": "What do I love?",
-    "answer": "I love turning ideas into digital experiences, experimenting with new web technologies, and solving complex problems through code.",
-    "img" : "/media/aboutImgs/WhatsApp Image 2025-09-02 at 13.38.10_c79838dd.jpg"
+    "id": "behind-the-code",
+    "button": "Behind the Code",
+    "answer": "When I'm not coding, you can find me exploring nature trails, experimenting with new design tools, or getting lost in a good video game. These hobbies fuel my creativity and help me see problems from different perspectives.",
+    "img": "/media/aboutImgs/hobbies.jpg"
   },
   {
     "id": "fun-fact",
     "button": "Fun Fact 😀",
-    "answer": "Besides coding, I enjoy video games, exploring nature, and improving my skills in design and front-end development.",
+    "answer": "I’m in a committed long-term relationship with console.log(). We have a very open and trusting relationship, and it never lies to me. Well, almost never.",
     "img": "/media/aboutImgs/WhatsApp Image 2025-09-02 at 13.38.10_dd1d9ad3.jpg"
   }
 ]
@@ -61,7 +67,7 @@ export const ProjectsData = [
     ],
     "link": "https://learningagent.vercel.app/",
     "github": "https://github.com/MoohamedPK/your-store",
-    "image": "/media/Projects/Screenshot 2025-09-07 193201.png",
+    "image": "/media/Projects/upscalemedia-transformed.png",
     "color": "#EEEFE0"
   },
   

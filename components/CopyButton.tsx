@@ -13,7 +13,7 @@ const CopyButton = () => {
             await navigator.clipboard.writeText(email); // copy the email
             setCopied(true);
 
-            setTimeout(() => setCopied(false) ,2000)
+            setTimeout(() => setCopied(false) ,1000)
         } catch (error) {
             console.error("Failed to copy!", error);
         }
