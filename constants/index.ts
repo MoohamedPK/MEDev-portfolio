@@ -23,7 +23,7 @@ export const aboutMe = [
     "id": "who-am-i",
     "button": "Who am I?",
     "answer": "I'm Mohamed Hassani, a web developer who builds modern, interactive websites that make a lasting impression.",
-    "img": "/media/aboutImgs/WhatsApp Image 2025-09-02 at 13.38.10_2a3ad396.jpg"
+    "img": "/media/aboutImgs/portfolio-img.png"
   },
   {
     "id": "Why do I build websites?",
@@ -68,7 +68,7 @@ export const ProjectsData = [
     "link": "https://learningagent.vercel.app/",
     "github": "https://github.com/MoohamedPK/your-store",
     "image": "/media/Projects/upscalemedia-transformed.png",
-    "color": "#EEEFE0"
+    "color": "#ECFAE5"
   },
   
   {
@@ -86,7 +86,7 @@ export const ProjectsData = [
     },
     "github": "https://github.com/MoohamedPK/awwward-landing-page-",
     "image": "/media/Projects/Screenshot 2025-09-04 210017.png",
-    "color": "#A7C1A8"
+    "color": "#ECFAE5"
   },
   {
     "title": "ShopHub E-commerce",
@@ -112,7 +112,7 @@ export const ProjectsData = [
     },
     "github":"https://github.com/MoohamedPK/your-store",
     "image": "/media/Projects/shophub-laptop.png",
-    "color": "#D1D8BE"
+    "color": "#DDF6D2"
   },
   {
     "title": "Food Delivery App",
@@ -134,6 +134,6 @@ export const ProjectsData = [
     },
     "github": "https://github.com/MoohamedPK/AI-SaaS-App",
     "image": "/media/Projects/Screenshot 2025-09-04 205856.png",
-    "color": "#B0DB9C"
+    "color": "#CAE8BD"
   }
 ]

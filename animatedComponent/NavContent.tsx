@@ -5,7 +5,7 @@ import Link from "next/link"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/all"
 import { useGSAP } from "@gsap/react"
-import { useRef } from "react"
+import { useRef} from "react"
 import Image from "next/image"
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,7 +14,7 @@ const NavContent = () => {
 
   const navRef = useRef<HTMLElement>(null);
   const liRefs = useRef<(HTMLElement | null)[]>([]);
-
+  
   useGSAP(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
@@ -26,11 +26,11 @@ const NavContent = () => {
       });
 
       tl.to(navRef.current, {
-        backgroundColor: "#BFBFBF",
-        border: "1px solid black",
+        backgroundColor: "rgba(0, 0, 0, 0.1)",
+        backdropFilter: "blur(5px)",
         margin: "8px",
         borderRadius: "8px",
-        color: "#000000",
+        color: "#FFFFFF",
         position: "sticky",
         top: "10px",
         zIndex: 30,
@@ -42,14 +42,15 @@ const NavContent = () => {
     return () => ctx.revert();
   }, []);
 
+
   return (
     <nav
       ref={navRef}
-      className="py-3 sm:py-4 px-4 sm:px-5 md:px-6 text-text bg-background flex justify-between items-center"
+      className="py-3 sm:py-2 px-4 sm:px-5 md:px-6 text-text bg-background flex justify-between items-center mix-blend-difference"
     >
       {/* Logo */}
       <div className="logo ">
-        <Image src={"/media/my-logo-2.svg"} alt="logo" width={0} height={0} className="size-[3rem] md:size-[5rem]"/>
+        <Image src={"/media/my-logo-2.svg"} alt="logo" width={0} height={0} className="size-[3rem] md:size-[4.5rem]"/>
       </div>
 
       {/* Navigation Links - Always visible */}
@@ -58,9 +59,10 @@ const NavContent = () => {
           <Link href={link.href} key={link.name}>
             <li
               ref={(el) => { liRefs.current[index] = el }}
-              className="cursor-pointer hover:opacity-70 transition-opacity whitespace-nowrap"
+              className="cursor-pointer hover:opacity-70 transition-opacity whitespace-nowrap flex items-center gap-x-2"
               id={link.href}
             >
+              
               {link.name}
             </li>
           </Link>

@@ -113,7 +113,7 @@ const ProjectsContent = () => {
             </div>
 
                 {ProjectsData.map((project, i) => (
-                <section key={i} style={{ top: `calc(10% + ${i * 60}px)`, backgroundColor: project.color }} className="min-h-[100dvh] w-[95dvw] sm:w-[92dvw] md:w-[90dvw] sticky flex justify-center items-center rounded-[50px] sm:rounded-[75px] md:rounded-[100px] text-black bg-white inset-shadow-sm inset-shadow-gray-400/60">
+                <section key={i} style={{ top: `calc(10% + ${i * 60}px)`, backgroundColor: project.color }} className="min-h-[100dvh] w-[95dvw] sm:w-[92dvw] md:w-[90dvw] sticky flex justify-center items-center rounded-[20px] sm:rounded-[20px] text-black bg-white inset-shadow-sm inset-shadow-gray-400/60">
                     
                     <div className="contentContainer size-full grid grid-cols-1 lg:grid-cols-2 items-center gap-y-8 lg:gap-y-0 lg:gap-x-12 px-4 sm:px-5 py-8 lg:py-0">
 
@@ -127,7 +127,7 @@ const ProjectsContent = () => {
                                     <h1 className="project-title font-nevanta-bold text-[1.5rem] sm:text-[1.8rem] md:text-[2.2rem] lg:text-[2.5rem]">{project.title}</h1>
                                 </div>
                                 <div className="">
-                                    <p className="overview w-full sm:w-4/5 md:w-3/4 font-nevanta-Light text-sm sm:text-base md:text-lg">{project.overview}</p>
+                                    <p className="overview w-full sm:w-4/5 md:w-3/4 font-nevanta-Light text-sm sm:text-base md:text-lg ">{project.overview}</p>
                                 </div>
                             </div>
 
@@ -142,7 +142,18 @@ const ProjectsContent = () => {
                                 </ul>
                             </div>
 
-                            <div className="buttons flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 md:space-x-6">
+                            {/* Mobile-only top-right icon buttons */}
+                            <div className="sm:hidden absolute top-3 right-3 flex items-center gap-2 z-10">
+                                <Link href={project.link} aria-label="Open live demo" className="w-10 h-10 rounded-full bg-background border border-black flex items-center justify-center btn-hover">
+                                    <ArrowUpRight size={18}/>
+                                </Link>
+                                <Link href={project.github} aria-label="Open GitHub repository" className="w-10 h-10 rounded-full bg-background border border-black flex items-center justify-center btn-hover">
+                                    <Github size={18}/>
+                                </Link>
+                            </div>
+
+                            {/* Desktop/tablet buttons with text */}
+                            <div className="hidden sm:flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 md:space-x-6">
                                 <Link href={project.link} className="flex items-center bg-background border border-black w-full sm:w-fit text-black p-2 sm:p-3 btn-hover cursor-pointer text-sm sm:text-base justify-center sm:justify-start">
                                     Live Demo
                                     <ArrowUpRight size={16} className="sm:w-5 sm:h-5"/>

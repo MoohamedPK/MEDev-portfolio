@@ -134,7 +134,7 @@ gsap.registerPlugin(SplitText, ScrollTrigger)
                     <div className="flex flex-col lg:flex-row justify-center items-center space-y-6 lg:space-y-0 lg:space-x-8 w-full max-w-7xl">
 
                         <div className="w-full sm:w-3/4 md:w-1/2 lg:w-1/2 relative flex justify-center">
-                            <Image ref={answerImgRef} className="about-img w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 object-cover sepia-50 rounded-lg" width={320} height={320} src={aboutMe[selectedQuestion].img ?? ""} alt="about picture"/>
+                            <Image ref={answerImgRef} className="about-img w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:size-80 object-cover sepia-50 rounded-lg" width={320} height={320} src={aboutMe[selectedQuestion].img ?? ""} alt="about picture"/>
                         </div>
 
                         <div className="w-full lg:w-1/2 text-[1em] sm:text-[1.2em] md:text-[1.5em] lg:text-[1.8em] xl:text-[2.5em] flex justify-center overflow-hidden uppercase">
