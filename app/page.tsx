@@ -14,7 +14,7 @@ export default function Home() {
         <Hero />
       </section>
 
-      <section id="about" className="py-12 sm:py-16 md:py-20 lg:py-24">
+      <section id="about" className="py-18 sm:py-20 md:py-20 lg:py-24 ">
         <About />
       </section>
 

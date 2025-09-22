@@ -25,7 +25,7 @@ interface FormProps {
 const ContactContent = () => {
 
     // GSAP ANIMATION
-    const contactSectionRef = useRef<HTMLElement | null>(null)
+    const contactSectionRef = useRef<HTMLDivElement | null>(null)
     const sectionTitleRef = useRef<HTMLHeadingElement | null>(null)
     const contactHeadRef = useRef<HTMLHeadingElement | null>(null)
     const contactTextRef = useRef<HTMLParagraphElement | null>(null)
@@ -191,13 +191,15 @@ const ContactContent = () => {
 
     return (
 
-            <main ref={contactSectionRef} className="min-h-screen bg-white text-black py-[2rem] sm:py-[3rem]">
+        <main className=" bg-white text-black py-[2rem] sm:py-[3rem]">
 
                 <div className="text-center text-[1.2em] sm:text-[1.5em] md:text-[1.8em] lg:text-[2em] overflow-hidden text-black italic font-nevanta-Medium px-4">
                     <h1 ref={sectionTitleRef} className="section-title m-0 leading-6 sm:leading-7 md:leading-8">
                         Let&apos;s Get in Touch
                     </h1>
                 </div>
+
+            <div ref={contactSectionRef} className="flex flex-col justify-center min-h-[90dvh]">
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-y-0 lg:gap-x-6 px-4 sm:px-6">
 
@@ -304,7 +306,8 @@ const ContactContent = () => {
 
                     <span className="line "></span>
                 </div>
-            </main>
+            </div>
+        </main>
     )
 }
 
