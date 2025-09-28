@@ -121,11 +121,11 @@ const HeroContent = () => {
             <div className="px-4 sm:px-6 lg:px-8 size-full flex flex-col justify-center">
 
                 <div className="hero-text font-nevanta-bold uppercase text-[2rem] sm:text-[3rem] md:text-[5.5rem] text-center md:text-left italic">
-                    <div ref={mainTextRef} className='leading-tight'>
+                    <h1 ref={mainTextRef} className='leading-tight'>
                         mohamed hassani<br/>
                         website developer<br/>
                         expert
-                    </div>
+                    </h1>
 
                     <p ref={taglineTextRef} className='font-nevanta-Medium capitalize text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] pt-3 sm:pt-4 lg:pt-5 leading-relaxed'>From concept to code — bringing visions to life.</p>
                 </div>

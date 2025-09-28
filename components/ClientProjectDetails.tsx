@@ -75,12 +75,12 @@ const ClientProjectDetails = ({ project }: { project: Project }) => {
     <div className="light-effect w-[55rem] h-[10rem] absolute -top-15 left-1/2 -translate-x-1/2 blur-[12rem] bg-white rounded-full"></div>
 
     {/* Title & Buttons */}
-    <div className="font-nevanta-bold uppercase text-center px-6 text-[2.5rem] sm:text-[3rem] md:text-[4rem]">
+    <header className="font-nevanta-bold uppercase text-center px-6 text-[2.5rem] sm:text-[3rem] md:text-[4rem]">
         <div className="flex flex-col md:flex-row justify-center items-center relative">
             {/* Project Title */}
             <h1 className="title italic">✦ {project.title} ✦</h1>
         </div>
-    </div>
+    </header>
 
     <div className="flex justify-between px-10 pt-25">
         <div className="link-btn ">
@@ -98,43 +98,43 @@ const ClientProjectDetails = ({ project }: { project: Project }) => {
     </div>
 
     {/* Cards */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 sm:px-10 pt-12 font-nevanta-Medium">
+    <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 sm:px-10 pt-12 font-nevanta-Medium">
 
         {/* Project Overview */}
-        <div className="bg-zinc-300 card rounded-[20px] px-6 sm:px-10 py-6 sm:py-8 text-black">
-            <div className="flex pb-4 items-center space-x-4">
-                <span className="text-2xl">✺</span>
-                <h1 className="text-xl">Project Overview</h1>
-            </div>
+        <article className="bg-zinc-300 card rounded-[20px] px-6 sm:px-10 py-6 sm:py-8 text-black">
+            <header className="flex pb-4 items-center space-x-4">
+                <span className="text-2xl" aria-hidden="true">✺</span>
+                <h2 className="text-xl">Project Overview</h2>
+            </header>
             <p className="overview">● {project.overview}</p>
-        </div>
+        </article>
 
         {/* Features */}
-        <div className="bg-zinc-300 card rounded-[20px] px-6 sm:px-10 py-6 sm:py-8 text-black">
-            <div className="flex pb-4 items-center space-x-4">
-                <span className="text-2xl">✹</span>
-                <h1 className="text-xl">Features</h1>
-            </div>
+        <article className="bg-zinc-300 card rounded-[20px] px-6 sm:px-10 py-6 sm:py-8 text-black">
+            <header className="flex pb-4 items-center space-x-4">
+                <span className="text-2xl" aria-hidden="true">✹</span>
+                <h2 className="text-xl">Features</h2>
+            </header>
             <ul className="space-y-3">
                 {project.features.map((feat) => (
                     <li key={feat} className="feature flex items-center space-x-3">● {feat}</li>
                 ))}
             </ul>
-        </div>
+        </article>
 
         {/* Tech Stack */}
-        <div className="bg-zinc-300 card rounded-[20px] col-span-1 md:col-span-2 lg:col-span-1 px-6 sm:px-10 py-6 sm:py-8 text-black">
-            <div className="flex pb-4 items-center space-x-4">
-                <span className="text-[1.5rem]">✶</span>
-                <h1 className="text-xl">Tech Stack</h1>
-            </div>
+        <article className="bg-zinc-300 card rounded-[20px] col-span-1 md:col-span-2 lg:col-span-1 px-6 sm:px-10 py-6 sm:py-8 text-black">
+            <header className="flex pb-4 items-center space-x-4">
+                <span className="text-[1.5rem]" aria-hidden="true">✶</span>
+                <h2 className="text-xl">Tech Stack</h2>
+            </header>
             <div className="grid grid-cols-2 sm:grid-cols-2 gap-y-2 gap-x-4">
                 {project.techs.map((tech) => (
-                    <li key={tech} className="tech flex items-center space-x-2">● {tech}</li>
+                    <div key={tech} className="tech flex items-center space-x-2">● {tech}</div>
                 ))}
             </div>
-        </div>
-    </div>
+        </article>
+    </main>
 </div>
 
     )
