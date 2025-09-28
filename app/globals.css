@@ -85,4 +85,15 @@
         @apply duration-400 hover:scale-90 
     }
 
+    .line-wrapper {
+        @apply overflow-hidden
+    }
+    .split-line {
+        @apply leading-13 pt-5
+    }
+
+    .text-split-line {
+        @apply leading-4 pt-5
+    }
+
 }

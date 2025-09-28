@@ -1,5 +1,4 @@
 "use client"; 
-
 import { ProjectsData } from "@/constants";
 
 //GSAP 
@@ -11,6 +10,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import { ArrowUpRight, Github } from "lucide-react";
 import Link from "next/link";
+import generateSlug from "@/lib";
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
@@ -22,20 +22,14 @@ const ProjectsContent = () => {
 
         const ctx = gsap.context(() => {
             
-            
             gsap.utils.toArray<HTMLElement>("section").forEach((section) => {
 
                 const title = section.querySelector(".project-title")
                 const splitTitle = new SplitText(title, {type: "words, chars"})
-
                 const overview = section.querySelector(".overview");
                 const overviewSplit = new SplitText(overview, {type: "lines, words"})
-
                 const featureList = section.querySelectorAll(".feature-list");
-                
-
                 const sectionTitleSplit = new SplitText(".section-title", {type: "words, chars"});
-
                 const projectImg = section.querySelector(".project-image");
 
                 gsap.fromTo(sectionTitleSplit.chars, {
@@ -79,7 +73,7 @@ const ProjectsContent = () => {
                     clipPath: "polygon(100% 0, 0 0, 0 100%, 100% 100%)",
                     duration: 0.9,
                     ease: "power3.inOut",
-                    
+
                 })
 
                 tl.fromTo([splitTitle.words, overviewSplit.lines, featureList], {
@@ -92,8 +86,6 @@ const ProjectsContent = () => {
                     ease:"power3.inOut",
                     stagger: 0.06,
                 }, "<=0.3")
-
-                
             })
             
         }, projectsContainerRef)
@@ -104,7 +96,7 @@ const ProjectsContent = () => {
     }, [])
 
     return (
-        <main ref={projectsContainerRef} className="grid justify-center items-center bg-background" style={{ height: `${ProjectsData.length * 110}vh` }}>
+        <main ref={projectsContainerRef} className="grid justify-center items-center bg-background" style={{ height: `${ProjectsData.length * 90}vh` }}>
 
             <div className="text-center text-[1.2em] sm:text-[1.5em] md:text-[1.8em] lg:text-[2em] overflow-hidden text-text italic font-nevanta-Medium py-[1.5rem] sm:py-[2rem]">
                 <h1 className="section-title m-0 leading-6 sm:leading-7 md:leading-8">
@@ -113,7 +105,7 @@ const ProjectsContent = () => {
             </div>
 
                 {ProjectsData.map((project, i) => (
-                <section key={i} style={{ top: `calc(10% + ${i * 60}px)`, backgroundColor: project.color }} className="min-h-[100dvh] w-[95dvw] sm:w-[92dvw] md:w-[90dvw] sticky flex justify-center items-center rounded-[20px] sm:rounded-[20px] text-black bg-white inset-shadow-sm inset-shadow-gray-400/60">
+                <section key={i} style={{ top: `calc(10% + ${i * 60}px)`}} className="min-h-[80dvh] w-[95dvw] sm:w-[92dvw] md:w-[90dvw] sticky flex justify-center items-center rounded-[20px] sm:rounded-[20px] text-zinc-300 bg-black/95 backdrop-blur-[5px] inset-shadow-sm inset-shadow-gray-400/60">
                     
                     <div className="contentContainer size-full grid grid-cols-1 lg:grid-cols-2 items-center gap-y-8 lg:gap-y-0 lg:gap-x-12 px-4 sm:px-5 py-8 lg:py-0">
 
@@ -131,39 +123,19 @@ const ProjectsContent = () => {
                                 </div>
                             </div>
 
-                            <div className="features font-nevanta-Medium capitalize space-y-2 sm:space-y-3">
-                                <p className="text-sm sm:text-base">Features: </p>
-                                <ul className="space-y-1 sm:space-y-2">
-                                    {project.features.map((feature, i) => (
-                                        <div key={i} className="flex items-center space-x-2 pl-3 sm:pl-5 leading-4 sm:leading-5 pt-1 overflow-hidden">
-                                            <li className="feature-list text-xs sm:text-sm md:text-base">{feature}</li>
-                                        </div>
-                                    ))}
-                                </ul>
-                            </div>
-
                             {/* Mobile-only top-right icon buttons */}
-                            <div className="sm:hidden absolute top-3 right-3 flex items-center gap-2 z-10">
-                                <Link href={project.link} aria-label="Open live demo" className="w-10 h-10 rounded-full bg-background border border-black flex items-center justify-center btn-hover">
-                                    <ArrowUpRight size={18}/>
+                            <div className=" absolute top-6 right-8 md:top-15 lg:right-5 lg:top-5 md:right-20 flex items-center gap-2 z-10">
+                                <Link target="_blank" href={project.link} aria-label="Open live demo" className="size-12 md:size-13 rounded-full bg-zinc-300 text-black flex items-center justify-center btn-hover">
+                                    <ArrowUpRight size={24}/>
                                 </Link>
-                                <Link href={project.github} aria-label="Open GitHub repository" className="w-10 h-10 rounded-full bg-background border border-black flex items-center justify-center btn-hover">
-                                    <Github size={18}/>
+                                <Link target="_blank" href={project.github} aria-label="Open GitHub repository" className="size-12 md:size-13  rounded-full text-black bg-zinc-300 flex items-center justify-center btn-hover">
+                                    <Github size={24}/>
                                 </Link>
                             </div>
 
-                            {/* Desktop/tablet buttons with text */}
-                            <div className="hidden sm:flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 md:space-x-6">
-                                <Link href={project.link} className="flex items-center bg-background border border-black w-full sm:w-fit text-black p-2 sm:p-3 btn-hover cursor-pointer text-sm sm:text-base justify-center sm:justify-start">
-                                    Live Demo
-                                    <ArrowUpRight size={16} className="sm:w-5 sm:h-5"/>
-                                </Link>
-
-                                <Link href={project.github} className="flex items-center bg-background border border-black w-full sm:w-fit text-black p-2 sm:p-3 btn-hover cursor-pointer space-x-2 text-sm sm:text-base justify-center sm:justify-start">
-                                    <p>Github Repo</p>
-                                    <Github size={16} className="sm:w-5 sm:h-5"/>
-                                </Link>
-                            </div>
+                            <Link href={`/projects/${generateSlug(project.title)}`}>
+                                <button className="details-link font-nevanta-Medium underline cursor-pointer">More Details</button>
+                            </Link>
                         </div>
 
                     </div>

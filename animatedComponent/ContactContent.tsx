@@ -10,6 +10,8 @@ import { SplitText } from "gsap/all"
 import { ArrowUpRight, Github, Linkedin, Twitter } from "lucide-react"
 import Link from "next/link"
 import CopyButton from "@/components/CopyButton"
+import TextSplitAnimation from "@/commonAnimations/TextSplitAnimation"
+import SplitHeadlinesAnimation from "@/commonAnimations/SplitHeadlinesAnimation"
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
@@ -95,16 +97,7 @@ const ContactContent = () => {
                 stagger: 0.07
             }, "<0.7")
 
-            tl.fromTo(".quote", {
-                skewX: 20,
-                opacity: 0,
-                scale: 0.7,
-            }, {
-                opacity: 1,
-                skewX: 0,
-                scale: 1,
-                duration: 1.5,
-            }, "<0.4")
+            tl.add(SplitHeadlinesAnimation(".quote"), "<0.4")
 
             mm.add("(min-width: 768px)", () => {
                 tl.fromTo(".line", {
@@ -221,15 +214,15 @@ const ContactContent = () => {
 
                         <div className="flex items-center space-x-4 sm:space-x-6">
                             <Link className="link" target="_blank" href={'https://github.com/MoohamedPK'}>
-                                <Github size={20} className="sm:w-6 sm:h-6"/>
+                                <Github size={20} className="sm:w-6 sm:h-6  hover:-translate-y-1 transition-transform duration-300"/>
                             </Link>
 
                             <Link className="link" target="_blank" href={'https://www.linkedin.com/in/mohamed-hs/'}>
-                                <Linkedin size={20} className="sm:w-6 sm:h-6"/>
+                                <Linkedin size={20} className="sm:w-6 sm:h-6  hover:-translate-y-1 transition-transform duration-300"/>
                             </Link>
 
                             <Link className="link" target="_blank" href={'https://x.com/MohamedHS45'}>
-                                <Twitter size={20} className="sm:w-6 sm:h-6"/>
+                                <Twitter size={20} className="sm:w-6 sm:h-6  hover:-translate-y-1 transition-transform duration-300"/>
                             </Link>
                         </div>
                     </div>

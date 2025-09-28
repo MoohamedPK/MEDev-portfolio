@@ -20,7 +20,9 @@ const HeroContent = () => {
     ]
     
     useGSAP(() => {
-        
+
+        const ctx = gsap.context(() => {
+
             const mainTextSplit = SplitText.create(mainTextRef.current, {type: "lines"});
             const taglineSplit = SplitText.create(taglineTextRef.current, {type: "lines"});
             const bars = gsap.utils.toArray(".bar");
@@ -48,10 +50,10 @@ const HeroContent = () => {
                     stagger: 0.07,
                     ease: "power3.inOut"
                 }, "<0.8");
-
+    
                 // animate blob 
                 const animateBlob = (id: string, rangeX: [number, number], rangeY: [number, number]) => {
-
+    
                     gsap.to(`#${id}`, {
                         duration: 4,
                         ease: "power3.inOut",
@@ -59,7 +61,7 @@ const HeroContent = () => {
                         // yoyo: true,
                         keyframes: blobPaths.map((d) => ({attr: {d}}))
                     })
-
+    
                     const floatBlob = () => {
                         
                         gsap.to(`#${id}`, {
@@ -70,21 +72,26 @@ const HeroContent = () => {
                             onComplete: floatBlob
                         })
                     } 
-
+    
                     floatBlob()
                 }
-
+    
                 // create blobs to animate
                 Array.from({length: 5}).forEach((_, i) => {
-
+    
                     const offsetX = i * 500 - 600;
                     const rangeX: [number,number] = [offsetX - 200, offsetX + 300];
                     const rangeY: [number,number] = [-300, 300];
-
+    
                     animateBlob(`blob${i}`, rangeX, rangeY)
                 })
+        }, containerRef)
 
-            }, [containerRef])
+        return () => {
+            ctx.revert();
+        }
+
+            }, [])
 
     return (
 
