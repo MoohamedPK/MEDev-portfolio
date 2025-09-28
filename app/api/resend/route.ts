@@ -7,8 +7,8 @@ export async function POST(req: Request) {
 
     const body = await req.json()
     const {data, error} = await resend.emails.send({
-        from: "onboarding@resend.dev", // this is the domain 
-        to: "mohamedhassani123456@gmail.com", // the receiver
+        from: process.env.WEB_URL ?? "onboarding@resend.dev",
+        to: process.env.EMAIL_RECEIVER ?? "",
         subject: body.subject, 
         text: body.message,
         replyTo: body.email // the user that we will reply to 
@@ -18,3 +18,4 @@ export async function POST(req: Request) {
 
     return Response.json({ status: 200, data });
 };
+
