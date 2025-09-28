@@ -17,7 +17,7 @@ const AboutContent = () => {
     
     useGSAP(() => {
         
-            const split = SplitText.create(answerRef.current, {type: "words, lines"})
+            const split = SplitText.create(answerRef.current, {type: "lines"})
             
             const tl = gsap.timeline()
 
@@ -141,7 +141,7 @@ const AboutContent = () => {
 
 
 return (
-    <section ref={aboutContainerRef} className="min-h-[100dvh] md:min-h-[120dvh] bg-text text-background font-nevanta-Medium italic">
+    <section ref={aboutContainerRef} className={`${selectedQuestion ? "min-h-[100dvh] md:min-h-[120dvh] bg-text text-background font-nevanta-Medium italic" : "min-h-[60dvh] md:min-h-[70dvh] bg-text text-background font-nevanta-Medium italic"}`} >
         <div className="text-container text-center text-[1.2em] sm:text-[1.5em] md:text-[1.8em] lg:text-[2em] overflow-hidden pt-[8dvh] sm:pt-[10dvh]">
             <h1 className="title-text leading-6 sm:leading-7 md:leading-8">
                 Discover More About Me!
@@ -160,17 +160,17 @@ return (
 
         <div className="answer flex justify-center items-center mt-16 sm:mt-20 md:mt-24 lg:mt-32 px-4">
             {selectedQuestion === null ? (
-                <div className="font-nevanta-Light text-sm sm:text-base md:text-lg lg:text-xl text-center">What Do You Want To Know About Me? 😶‍🌫️</div>
+                <div className="font-nevanta-Light text-white text-sm sm:text-base md:text-lg lg:text-xl text-center">What Do You Want To Know About Me? 😶‍🌫️</div>
             ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 size-full items-center gap-y-12 md:gap-y-0 px-15 text-background font-nevanta-Light text-xl md:text-2xl lg:text-3xl">
+                <div className="grid grid-cols-1 md:grid-cols-2 size-full items-center gap-y-12 md:gap-y-0 px-15 text-background">
 
                     <div className="">
-                        <Image src={aboutMe[selectedQuestion].img} alt="about image" width={450} height={450} className="about-img"/>
+                        <Image src={aboutMe[selectedQuestion].img} alt="about image" width={400} height={400} className="about-img"/>
                     </div>
 
                     {aboutMe[selectedQuestion].answer ? (
-                        <div className="leading-8 md:leading-11">
-                        <p ref={answerRef} className="leading-11">
+                        <div className="leading-8 md:leading-11 ">
+                        <p ref={answerRef} className="leading-6 sm:leading-7 md:leading-8 lg:leading-9 font-nevanta-Light text-sm sm:text-base md:text-lg lg:text-xl w-full max-w-2xl mx-auto text-center">
                             {aboutMe[selectedQuestion].answer}
                         </p>
                     </div>

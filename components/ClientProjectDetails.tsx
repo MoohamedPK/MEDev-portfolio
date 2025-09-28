@@ -69,7 +69,7 @@ const ClientProjectDetails = ({ project }: { project: Project }) => {
     })
 
     return (
-        <div ref={projectDetailsRef} className="bg-black min-h-screen md:min-h-[120dvh] py-10 md:py-20 text-white relative">
+        <div ref={projectDetailsRef} className="bg-black min-h-screen md:min-h-[120dvh] py-10 md:py-20 text-white relative overflow-hidden">
 
     {/* Light effect */}
     <div className="light-effect w-[55rem] h-[10rem] absolute -top-15 left-1/2 -translate-x-1/2 blur-[12rem] bg-white rounded-full"></div>
