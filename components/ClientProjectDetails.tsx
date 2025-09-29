@@ -74,13 +74,9 @@ const ClientProjectDetails = ({ project }: { project: Project }) => {
     {/* Light effect */}
     <div className="light-effect w-[55rem] h-[10rem] absolute -top-15 left-1/2 -translate-x-1/2 blur-[12rem] bg-white rounded-full"></div>
 
-    {/* Title & Buttons */}
-    <header className="font-nevanta-bold uppercase text-center px-6 text-[2.5rem] sm:text-[3rem] md:text-[4rem]">
-        <div className="flex flex-col md:flex-row justify-center items-center relative">
-            {/* Project Title */}
-            <h1 className="title italic">✦ {project.title} ✦</h1>
+        <div className="text-center text-[1.7rem] md:text-[2.5rem] font-nevanta-Medium">
+            <h1 className="title italic">✦  {project.title}</h1>
         </div>
-    </header>
 
     <div className="flex justify-between px-10 pt-25">
         <div className="link-btn ">

@@ -4,8 +4,8 @@ import { ProjectsData } from "@/constants";
 //GSAP 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
-import { SplitText } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
 import { useRef } from "react";
 import Image from "next/image";
 import { ArrowUpRight, Github } from "lucide-react";
@@ -46,19 +46,36 @@ const ProjectsContent = () => {
                 })
 
                 // section scale animation 
-                 gsap.set(projectsContainerRef.current, { perspective: 1000 }); // set perspective on parent
-
+                //  gsap.set(projectsContainerRef.current, { perspective: 1000 }); // set perspective on parent
+                const mm = gsap.matchMedia();
+                mm.add("(min-width: 768px)", () => {
+                gsap.set(projectsContainerRef.current, { perspective: 1000 });
                 gsap.to(section, {
-                    z: -200,              // push backward in 3D space
-                    scale: 0.6,
-                    transformOrigin: "center top",
-                    scrollTrigger: {
-                    trigger: section,
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: true,
-                    }
-                })
+            z: -200,
+            scale: 0.6,
+            transformOrigin: "center top",
+            scrollTrigger: {
+                trigger: section,
+                start: "top top",
+                end: "bottom top",
+                scrub: true,
+            }
+            });
+        });
+
+        mm.add("(max-width: 767px)", () => {
+            // Simpler, no perspective
+            gsap.to(section, {
+            scale: 0.95,
+            opacity: 0.9,
+            scrollTrigger: {
+                trigger: section,
+                start: "top top",
+                end: "bottom top",
+                scrub: true,
+            }
+            });
+        });
 
                 const tl = gsap.timeline({
                     scrollTrigger: {
@@ -91,7 +108,7 @@ const ProjectsContent = () => {
         }, projectsContainerRef)
 
         return () => {
-            ctx.revert();
+            ctx.clear();
         }
     }, [])
 

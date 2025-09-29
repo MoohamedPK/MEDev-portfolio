@@ -4,7 +4,8 @@ import Image from "next/image"
 import gsap from "gsap";
 import { useRef, useState } from "react";
 import { aboutMe } from "@/constants";
-import { SplitText, ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {SplitText} from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(SplitText, ScrollTrigger)

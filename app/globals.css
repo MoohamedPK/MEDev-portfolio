@@ -89,7 +89,7 @@
         @apply overflow-hidden
     }
     .split-line {
-        @apply leading-13 pt-5
+        @apply leading-6 md:leading-11 pt-5
     }
 
     .text-split-line {

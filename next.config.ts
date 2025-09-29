@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Enable experimental features for better SEO
   experimental: {
-    optimizePackageImports: ['@gsap/react', 'lucide-react'],
+    optimizePackageImports: ['gsap', '@gsap/react', 'lucide-react'],
   },
   
   // Image optimization for better performance

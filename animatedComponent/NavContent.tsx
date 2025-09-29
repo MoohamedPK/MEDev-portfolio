@@ -3,7 +3,7 @@ import { Links } from "@/constants"
 import Link from "next/link"
 
 import gsap from "gsap"
-import { ScrollTrigger } from "gsap/all"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
 import { useRef} from "react"
 import Image from "next/image"

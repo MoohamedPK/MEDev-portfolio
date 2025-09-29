@@ -14,7 +14,7 @@ export default function manifest(): MetadataRoute.Manifest {
         src: '/media/my-logo-2.svg',
         sizes: 'any',
         type: 'image/svg+xml',
-        
+        purpose: 'any maskable'
       },
       {
         src: '/favicon.ico',
@@ -28,3 +28,4 @@ export default function manifest(): MetadataRoute.Manifest {
     scope: '/',
   }
 }
+

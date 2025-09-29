@@ -7,7 +7,7 @@ gsap.registerPlugin(SplitText);
 
 const SplitHeadlinesAnimation = (target: string) => {
 
-  const split = new SplitText(target, {type: "lines"});
+  const split = new SplitText(target, {type: "words,lines"});
 
   split.lines.forEach((line) => {
     const wrapper = document.createElement("div");

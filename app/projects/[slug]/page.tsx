@@ -90,17 +90,17 @@ const ProjectDetails = async ({params}: ProjectProps) => {
         "inLanguage": "en"
     };
 
-  return (
+return (
     <>
-      <script
+    <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <div>
+    />
+    <div>
         <ClientProjectDetails project={project}/>
-      </div>
+    </div>
     </>
-  )
+)
 }
 
 export default ProjectDetails

@@ -5,17 +5,16 @@ import { ChangeEvent, useRef, useState } from "react"
 
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
-import { ScrollTrigger } from "gsap/all"
-import { SplitText } from "gsap/all"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { SplitText } from "gsap/SplitText"
 import { ArrowUpRight, Github, Linkedin, Twitter } from "lucide-react"
 import Link from "next/link"
 import CopyButton from "@/components/CopyButton"
-import TextSplitAnimation from "@/commonAnimations/TextSplitAnimation"
 import SplitHeadlinesAnimation from "@/commonAnimations/SplitHeadlinesAnimation"
+import { usePathname } from "next/navigation"
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
-
 
 interface FormProps {
     name: string,
@@ -32,6 +31,7 @@ const ContactContent = () => {
     const contactHeadRef = useRef<HTMLHeadingElement | null>(null)
     const contactTextRef = useRef<HTMLParagraphElement | null>(null)
     const copyIconRef = useRef<HTMLDivElement | null>(null);
+    const pathname = usePathname();
     
     useGSAP(() => {
         
@@ -133,7 +133,7 @@ const ContactContent = () => {
         return () => {
             ctx.revert();
         }
-    }, [])
+    }, [pathname])
 
 
     //state to handle the form
