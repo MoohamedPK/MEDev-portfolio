@@ -70,7 +70,7 @@ const ContactContent = () => {
                 opacity: 1, 
                 y: 0,
                 stagger: 0.07
-            }, "<0.7")  
+            }, "<0.4")  
 
             tl.fromTo([".myEmail",".sendBtn"], {
                 x: -40,
@@ -78,7 +78,7 @@ const ContactContent = () => {
             }, {
                 x: 0,
                 opacity : 1,
-            }, "<0.7")
+            }, "-=0.6")
 
             tl.fromTo(copyIconRef.current, {
                 opacity :0,
@@ -86,7 +86,7 @@ const ContactContent = () => {
             }, {
                 opacity: 1,
                 y: 0
-            }, "<0.5")
+            }, "-=0.6")
 
             tl.fromTo(linksRef, {
                 opacity: 0,
@@ -95,7 +95,7 @@ const ContactContent = () => {
                 opacity: 1,
                 y:0,
                 stagger: 0.07
-            }, "<0.7")
+            }, "-=0.6")
 
             tl.add(SplitHeadlinesAnimation(".quote"), "<0.4")
 

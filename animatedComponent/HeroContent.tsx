@@ -23,6 +23,7 @@ const HeroContent = () => {
 
         const ctx = gsap.context(() => {
 
+            const mm = gsap.matchMedia();
             const mainTextSplit = SplitText.create(mainTextRef.current, {type: "lines"});
             const taglineSplit = SplitText.create(taglineTextRef.current, {type: "lines"});
             const bars = gsap.utils.toArray(".bar");
@@ -51,40 +52,45 @@ const HeroContent = () => {
                     ease: "power3.inOut"
                 }, "<0.8");
     
-                // animate blob 
-                const animateBlob = (id: string, rangeX: [number, number], rangeY: [number, number]) => {
-    
-                    gsap.to(`#${id}`, {
-                        duration: 4,
-                        ease: "power3.inOut",
-                        repeat: -1,
-                        // yoyo: true,
-                        keyframes: blobPaths.map((d) => ({attr: {d}}))
-                    })
-    
-                    const floatBlob = () => {
-                        
+
+                mm.add("(min-width:767px)", () => {
+
+                    // animate blob 
+                    const animateBlob = (id: string, rangeX: [number, number], rangeY: [number, number]) => {
+        
                         gsap.to(`#${id}`, {
-                            duration: gsap.utils.random(3,5),
-                            x: gsap.utils.random(rangeX[0], rangeX[1]),  // 300 250 100 
-                            y: gsap.utils.random(rangeY[0], rangeY[1]),
+                            duration: 4,
                             ease: "power3.inOut",
-                            onComplete: floatBlob
+                            repeat: -1,
+                            // yoyo: true,
+                            keyframes: blobPaths.map((d) => ({attr: {d}}))
                         })
-                    } 
-    
-                    floatBlob()
-                }
-    
-                // create blobs to animate
-                Array.from({length: 5}).forEach((_, i) => {
-    
-                    const offsetX = i * 500 - 600;
-                    const rangeX: [number,number] = [offsetX - 200, offsetX + 300];
-                    const rangeY: [number,number] = [-300, 300];
-    
-                    animateBlob(`blob${i}`, rangeX, rangeY)
+        
+                        const floatBlob = () => {
+                            
+                            gsap.to(`#${id}`, {
+                                duration: gsap.utils.random(3,5),
+                                x: gsap.utils.random(rangeX[0], rangeX[1]),  // 300 250 100 
+                                y: gsap.utils.random(rangeY[0], rangeY[1]),
+                                ease: "power3.inOut",
+                                onComplete: floatBlob
+                            })
+                        } 
+        
+                        floatBlob()
+                    }
+
+                    // create blobs to animate
+                    Array.from({length: 5}).forEach((_, i) => {
+        
+                        const offsetX = i * 500 - 600;
+                        const rangeX: [number,number] = [offsetX - 200, offsetX + 300];
+                        const rangeY: [number,number] = [-300, 300];
+        
+                        animateBlob(`blob${i}`, rangeX, rangeY)
+                    })
                 })
+    
         }, containerRef)
 
         return () => {

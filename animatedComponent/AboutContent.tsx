@@ -152,8 +152,8 @@ return (
         <div className="flex mt-8 sm:mt-12 md:mt-16 lg:mt-18 justify-center px-4">
             <div className="btn-container flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 border border-background w-fit px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 rounded-full">
                 {aboutMe.map((q, i) => (
-                    <div key={i} className="">
-                        <button onClick={() => setSelectedQuestion(i)} className="my-btn bg-background text-text p-1.5 sm:p-2 rounded-full cursor-pointer btn-hover text-xs sm:text-sm md:text-base">{q.button}</button>
+                    <div key={i} className="btn-hover">
+                        <button onClick={() => setSelectedQuestion(i)} className="my-btn bg-background text-text p-1.5 sm:p-2 rounded-full cursor-pointer  text-xs sm:text-sm md:text-base">{q.button}</button>
                     </div>
                 ))}
             </div>

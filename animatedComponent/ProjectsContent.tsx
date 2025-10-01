@@ -66,7 +66,7 @@ const ProjectsContent = () => {
         mm.add("(max-width: 767px)", () => {
             // Simpler, no perspective
             gsap.to(section, {
-            scale: 0.95,
+            scale: 0.9,
             opacity: 0.9,
             scrollTrigger: {
                 trigger: section,
@@ -122,7 +122,7 @@ const ProjectsContent = () => {
             </div>
 
                 {ProjectsData.map((project, i) => (
-                <section key={i} style={{ top: `calc(10% + ${i * 60}px)`}} className="min-h-[80dvh] w-[95dvw] sm:w-[92dvw] md:w-[90dvw] sticky flex justify-center items-center rounded-[20px] sm:rounded-[20px] text-zinc-300 bg-black/95 backdrop-blur-[5px] inset-shadow-sm inset-shadow-gray-400/60">
+                <section key={i} style={{ top: `calc(10% + ${i * 60}px)`}} className="min-h-[80dvh] w-[95dvw] sm:w-[92dvw] md:w-[90dvw] sticky flex justify-center items-center rounded-[20px] sm:rounded-[20px] text-zinc-300 bg-black/97 backdrop-blur-[5px] inset-shadow-sm inset-shadow-gray-400/60">
                     
                     <div className="contentContainer size-full grid grid-cols-1 lg:grid-cols-2 items-center gap-y-8 lg:gap-y-0 lg:gap-x-12 px-4 sm:px-5 py-8 lg:py-0">
 
